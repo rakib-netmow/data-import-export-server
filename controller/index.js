@@ -54,11 +54,18 @@ const importData = async (req, res) => {
 // };
 
 const count = async (req, res) => {
-  // const worker = new Worker("../config/worker.js", {
-  //   workerData: {
-  //     data:
-  //   }
+  // const worker = new Worker("./config/worker2.js");
+  // worker.on("message", (data) => {
+  //   res.status(200).json(data);
   // });
+  // worker.on("error", (err) => {
+  //   res.status(400).json(err);
+  // });
+  let result = 0;
+  for (var i = 0; i <= 100000000000; i++) {
+    result++;
+  }
+  res.status(200).json(result);
 };
 
 module.exports = {
